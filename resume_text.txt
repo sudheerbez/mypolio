@@ -1,0 +1,119 @@
+SUDHEER BEZAWADA
+Chicago, IL
+📞 316-351-8027 | ✉ sudheerbez9@gmail.com | 🔗 linkedin.com/in/sudheerbez
+
+PROFESSIONAL SUMMARY
+• Results-driven and versatile Software Engineer with over 5+ years of experience crafting high-performance applications across various domains.
+• Proven ability to design, develop, and deploy scalable & secure solutions leveraging a comprehensive tech stack (Java, Python, Node.js, Spring, React, etc.). Thrives in collaborative Agile environments and consistently delivers projects on time and within budget.
+• Key Accomplishments:
+– Increased application scalability by 24% by implementing Java/Spring Boot microservices and React/TypeScript front-end modules for trading and portfolio systems, achieving 99.99% uptime and 35% faster API performance.
+– Implemented event-driven architectures (Kafka), CI/CD automation, and cloud infrastructure (AWS, Terraform) that improved development velocity by 30% and reduced production deployment time by over 50%.
+– Engineered HIPAA-compliant microservices and API integrations connecting payer, eligibility, and claims systems, improving data accuracy and reducing manual escalations by 30% across healthcare workflows.
+– Automated infrastructure and DevOps pipelines with Terraform, Docker, and Kubernetes, strengthening deployment reliability and cutting cloud provisioning errors by 90%.
+– Led the end-to-end design and development of a cross-platform donation and community service platform using Java, React.js, and Android/Kotlin, driving 20,000+ app downloads and a 150% increase in user retention.
+– Built and optimized scalable backends (Java, Go, MySQL) and mobile integrations (Google Maps, FCM, GPS) to connect donors with local needs, significantly expanding the nonprofit's digital reach and operational efficiency.
+
+TECHNICAL SKILLS
+• Programming Languages: Java, Scala, Python, C#, PL/SQL, Bash, UML, JavaScript (ES6+), TypeScript, HTML5, CSS3, XML, JSON
+• Frameworks: Spring (Core, Boot, MVC, Security, Batch, Quartz), Hibernate, Struts, Servlets, Node.js, Express.js, REST APIs, SOAP Web
+• Frontend: React, Redux, AngularJS, Angular 2+, jQuery, Bootstrap, Tailwind CSS, Material-UI
+• Backend: Node.js, Express.js, Grails, Mule ESB, web services
+• Databases: Oracle, MySQL, MS SQL Server, PostgreSQL, MS Access, SQLite, MongoDB, DynamoDB, Cassandra
+• Data & Analytics: SQL, Tableau, Power BI, Data Visualization, A/B Testing, Metrics Definition (KPIs, OKRs)
+• Cloud & DevOps: AWS (Lambda, API Gateway, EC2, S3, IAM), GCP, Docker, Kubernetes, Terraform, YAML
+• Version Control & CI/CD: Git, SVN, CVS, ClearCase, Jenkins, Gradle, Webpack, PowerShell, Linux/Unix Shell Scripting
+• IDEs & Tools: Eclipse, NetBeans, RSA, RAD, WSAD, Jira, VS code
+• Testing & QA: Unit Testing, JUnit, Mockito, API Testing, Frontend Testing: Jest, Mocha, Cypress
+• Application Servers & Methodologies: Apache Tomcat, JBoss (4.2.x, 5.x, 6.1 EAP), WebSphere, WebLogic, Agile, Scrum, TDD, XP
+
+PROFESSIONAL EXPERIENCE
+Software Engineer | Robinhood June 2024 – Present
+(Financial Trading Platform | Agile | Java Backend | Cloud-native Architecture)
+• Contributed to the Robinhood Strategies platform, a cutting-edge automated investment solution designed to optimize portfolios,
+generate personalized trading insights, and empower retail investors through data-driven decision-making and algorithmic strategies.
+• Designed and developed Java / Spring Boot microservices for order execution, strategy evaluation, and real-time portfolio rebalancing.
+• Built and optimized RESTful and GraphQL APIs for seamless data exchange across trading, analytics, and user-facing applications and
+improved API response time by ~35% through caching and query optimization
+• Implemented event-driven processing pipelines using Apache Kafka, improving message throughput and system responsiveness.
+• Designed and implemented secure OAuth 2.0 based auth flows and RBAC for multi-tiered user access control in microservice APIs.
+• Integrated data-driven investment models into production by working closely with data science teams; deployed models that increased
+recommendation accuracy by ~22%.
+• Delivered responsive UI modules using React, TypeScript, and Material-UI, with component reusability across the investor dashboard
+improving development velocity by ~30%.
+• Improved system reliability and scalability, achieving service availability and reducing API latency by 30% through caching and query
+tuning. Built infrastructure-as-code modules using Terraform to standardize and automate cloud deployments.
+• Deployed and monitored distributed services on AWS (ECS, S3, CloudWatch) using Docker, Jenkins and Automated CI/CD pipelines
+using GitHub Actions, Jenkins, and Docker; reduced deployment time from code merge to prod by over 50%.
+• Participated in daily Agile ceremonies with cross-functional teams. Performed code reviews and mentored junior developers on clean
+coding practices. Worked with Trac, Subversion (SVN), and Wiki to track various aspects of the project.
+• Implemented scalable RESTful APIs using Node.js and Express, integrating JSON-based data flows with secure authentication mechanisms.
+• Created internal API documentation using Swagger/OpenAPI, improving cross-team onboarding and reducing integration bugs by 40%.
+• Contributed to incident response processes, authored postmortem reports, and participated in load testing prior to high-volume market
+events.
+Key Technologies: Java, Spring Boot, Kafka, GraphQL, React, TypeScript, CSS, REST API, Docker, AWS, Jenkins, PostgreSQL,
+MongoDB, Redis, Microservices, CI/CD
+
+Software Engineer | Cognizant Sep 2021 – Jan 2023
+(Healthcare Domain | Java Backend | API Integration | Cloud & DevOps)
+• Developed and maintained Java Spring Boot microservices aligned to healthcare document workflows and claims processing systems
+• Built secure RESTful APIs for seamless integration between web modules and backend services
+• Created front-end features using ReactJS and Bootstrap, enhancing the usability for healthcare operations users. Managed Dell Boomi
+integration flows to connect internal claim systems with external payer APIs
+• Applied HIPAA-compliant data handling in all backend and integration layers ensuring secure processing. Wrote unit and integration tests
+using JUnit, and validated REST endpoints with Postman. Containerized microservices using Docker and managed container
+orchestration through Kubernetes
+• Implemented CI/CD pipelines using Gradle and integrated them with Jenkins for automated deployment. Built Dell Boomi connectors
+to sync employee healthcare eligibility between vendors. Managed Kafka streams for real-time status updates on healthcare tasks and events
+• Automated infrastructure provisioning using Terraform, including AWS Lambda and S3 configurations.Created structured MongoDB
+and Oracle schemas to manage claims and patient reference data
+• Followed Agile methodology with daily stand-ups, story point estimations, and retrospective meetings. Applied Spring Security to protect
+sensitive endpoints and support RBAC-based user flows
+• Used Node.js scripts in build pipelines for automation of file processing
+• Integrated AI and ML features into backend systems using Spring AI framework and custom pipelines, enhancing patient risk analytics
+and predictive modeling. Collaborated with offshore testers to ensure seamless QA cycles
+• Refined backend performance using Java 8 streams and thread pooling. Generated and documented API specifications using AI
+• Used GIT for version control, enabling efficient branching and merging across development. Logged application metrics using AWS
+CloudWatch for proactive monitoring
+• Implemented the Spring dependency injection of the Database helper instance to the action objects.
+
+Software Developer | Team Tarak Trust Jan 2019 – Dec 2021
+(Volunteer-led platform for community services and donations)
+• Led Development & Management: Directed the creation of an Android app and website for a charitable trust, utilizing Java for Android
+and HTML/CSS/JavaScript for front-end development.
+• Integrated Google Maps API with GPS to display nearest ports and improve location-based services
+• Developed features in both Web Backend (Java, Go, C/C++) and Web Frontend (React.js).
+• Built Android components for Bluetooth, GPS, and Location Connectivity. Implemented unit and integration tests using Mockito, JUnit,
+Robotium, Appium, and Robolectric.
+• Applied Google's Material Design for enhanced user experience and modern UI. Designed ListView and integrated SQLite databases
+for shipment monitoring. Developed cross-platform functionality integrating Wi-Fi, GPS, Camera, and Bluetooth.
+• Used Android NDK and Kotlin to improve performance and stability. Implemented push notification framework leveraging Google's
+cloud messaging services. Managed dependencies and builds with Gradle, reusing or customizing third-party libraries.
+• Supported desktop version of the app using Backbone.js, JavaScript, and RESTful JSON APIs. Worked on internationalization APIs
+(Formatters, Collation, Message Format) for global reach. Rendered 2D graphics with OpenGL for enhanced visualization.
+• Built iOS applications with Objective-C, Cocoa Touch, Swift, XCode, Xamarin, and CoreData. Developed cross-platform native
+apps using Vue.js and NativeScript.
+• Facilitated Community Support: Designed features to connect individuals in need with potential donors, including donation requests,
+blood donation drives, and trust event notifications. Database Management: Employed MySQL for effective database management,
+ensuring secure and reliable data storage increased application efficiency by 30%.
+• Achieved High Engagement: Successfully achieved over 20,000 app downloads, indicating strong user engagement and community
+interest. Enhanced Online Presence: Built a robust online platform that strengthened the trust's visibility and fostered community
+engagement improved user retention by 150%.
+EDUCATION
+Master of Science in Computer Science
+Wichita State University, Wichita, Kansas, CGPA:3.97/4.0
+
+PROJECTS
+Shopify Prototype Dec 2023
+JavaScript, Angular, Spring Boot, MySQL, Eclipse, Docker, Apache Kafka
+• Utilized JavaScript, TypeScript, and RxJS to implement complex business logic and data handling for the e-commerce application, resulting
+in a 20% increase in application reliability and stability.
+• Integrated Spring Boot with message brokers, like RabbitMQ and Apache Kafka, to implement asynchronous communication between
+microservices, improving system scalability and reliability by 22%.
+• Employed Spring Boot's actuator module to monitor the e-commerce application's health, performance metrics, and the appropriate
+infrastructure, leading to a 15% reduction in maintenance overhead.
+Distributed Systems, Machine Learning, Cloud Computing, Big Data Analytics
+
+PUBLICATIONS
+• ”Remote Medical Assistance for Marine Fishermen through OceanNet”, IEEE ICCCNT 2021, DOI: 10.1109/ICCCNT51525.2021.9579678
+
+
