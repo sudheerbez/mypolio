@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { Code, Github, Linkedin } from "lucide-react";
-import profile from "@/assets/profilepic_linkedin.jpeg";
+import profile from "@/assets/profilepic_linkedin.png";
 
 // Custom X Logo Component matching X branding
 const XLogo = ({ size = 18, className = "" }: { size?: number; className?: string }) => (
