@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { Code, Github, Linkedin } from "lucide-react";
-import profile from "@/assets/profilepic_linkedin.png";
+
 
 // Custom X Logo Component matching X branding
 const XLogo = ({ size = 18, className = "" }: { size?: number; className?: string }) => (
@@ -133,9 +133,7 @@ export function PortfolioHero() {
               style={{ fontFamily: "'Fira Code', monospace" }}
             />
 
-            <div className="absolute left-1/2 top-1/2 z-10 h-[120px] w-[70px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full shadow-2xl transition-transform duration-300 hover:scale-110 sm:h-[160px] sm:w-[95px] md:h-[190px] md:w-[115px] lg:h-[225px] lg:w-[135px]">
-              <img src={profile} alt="Sudheer Bezawada" className="h-full w-full object-cover" />
-            </div>
+
           </div>
         </div>
 
