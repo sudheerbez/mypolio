@@ -44,10 +44,10 @@ export function About() {
       const rawBase = (import.meta.env?.BASE_URL ?? '/') as string;
       const withLeadingSlash = rawBase.startsWith('/') ? rawBase : `/${rawBase}`;
       const normalizedBase = withLeadingSlash.endsWith('/') ? withLeadingSlash : `${withLeadingSlash}/`;
-      const relativeUrl = `${normalizedBase}Resume.pdf`;
+      const relativeUrl = `${normalizedBase}SudheerB_Resume.pdf`;
 
       if (typeof window === 'undefined') {
-        return { absoluteUrl: null, relativeUrl, fallbackRelative: 'Resume.pdf' };
+        return { absoluteUrl: null, relativeUrl, fallbackRelative: 'SudheerB_Resume.pdf' };
       }
 
       const origin = window.location.origin;
@@ -65,8 +65,8 @@ export function About() {
           absoluteUrl,
           relativeUrl,
           fallbackRelative,
-          '/Resume.pdf',
-          'Resume.pdf',
+          '/SudheerB_Resume.pdf',
+          'SudheerB_Resume.pdf',
         ].filter(Boolean),
       ),
     ) as string[];
@@ -78,7 +78,7 @@ export function About() {
     }
 
     // Fallback: open in new tab (lets browser try to resolve)
-    const fallbackUrl = candidates[0] ?? 'Resume.pdf';
+    const fallbackUrl = candidates[0] ?? 'SudheerB_Resume.pdf';
     if (typeof window !== 'undefined') {
       try {
         const popup = window.open(fallbackUrl, '_blank', 'noopener');
