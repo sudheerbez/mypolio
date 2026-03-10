@@ -4,20 +4,22 @@ import { AnimatedDownload } from './ui/animated-download';
 import { Button } from './ui/button';
 import { ReadingTextReveal } from './ui/reading-text-reveal';
 
+const aboutSegments = [
+  'I am a results-driven Software Engineer with 5+ years of expertise in building scalable, high-performance systems. My passion lies in designing microservices architectures, cloud infrastructure, and full-stack solutions that solve real-world problems across fintech, healthcare, and community impact domains.',
+  'My technical journey spans Java/Spring Boot backends, React frontends, AWS cloud infrastructure, and DevOps automation. I have successfully increased application scalability by 24%, improved API performance by 35%, and reduced deployment times by over 50% through thoughtful engineering and continuous optimization.',
+  'Beyond code, I am driven by the impact that technology can create. I led the development of a donation platform that achieved 20,000+ downloads and 150% user retention increase, demonstrating how engineering excellence can amplify meaningful social change.',
+  'Today, at Robinhood, I steward payment and trading platforms that power investment decisions for millions. I thrive in collaborative environments where systems thinking, clean code, and mentorship create the foundation for reliable, scalable solutions that users can trust.'
+];
+
 export function About() {
   const [isDownloading, setIsDownloading] = useState(false);
 
-  const aboutSegments = [
-    'I am a results-driven Software Engineer with 5+ years of expertise in building scalable, high-performance systems. My passion lies in designing microservices architectures, cloud infrastructure, and full-stack solutions that solve real-world problems across fintech, healthcare, and community impact domains.',
-    'My technical journey spans Java/Spring Boot backends, React frontends, AWS cloud infrastructure, and DevOps automation. I have successfully increased application scalability by 24%, improved API performance by 35%, and reduced deployment times by over 50% through thoughtful engineering and continuous optimization.',
-    'Beyond code, I am driven by the impact that technology can create. I led the development of a donation platform that achieved 20,000+ downloads and 150% user retention increase, demonstrating how engineering excellence can amplify meaningful social change.',
-    'Today, at Robinhood, I steward payment and trading platforms that power investment decisions for millions. I thrive in collaborative environments where systems thinking, clean code, and mentorship create the foundation for reliable, scalable solutions that users can trust.'
-  ];
-
   const handleStartDownload = useCallback(() => {
-    if (isDownloading) return;
-    setIsDownloading(true);
-  }, [isDownloading]);
+    setIsDownloading((prev) => {
+      if (prev) return prev;
+      return true;
+    });
+  }, []);
 
   const handleAnimationComplete = useCallback(async () => {
     setIsDownloading(false);
