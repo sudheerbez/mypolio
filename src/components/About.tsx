@@ -15,10 +15,7 @@ export function About() {
   const [isDownloading, setIsDownloading] = useState(false);
 
   const handleStartDownload = useCallback(() => {
-    setIsDownloading((prev) => {
-      if (prev) return prev;
-      return true;
-    });
+    setIsDownloading(true);
   }, []);
 
   const handleAnimationComplete = useCallback(async () => {
