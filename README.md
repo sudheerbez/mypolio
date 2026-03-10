@@ -59,7 +59,7 @@ A modern, interactive portfolio website showcasing my work as a software enginee
 ```
 portfolio/
 ├── public/
-│   └── Resume.pdf          # Resume file
+│   └── SudheerB_Resume.pdf   # Resume file
 ├── src/
 │   ├── components/
 │   │   ├── ui/             # Reusable UI components

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
+import { motion } from "framer-motion";
 import { Code, Github, Linkedin } from "lucide-react";
 
 
@@ -149,24 +150,59 @@ export function PortfolioHero() {
                 style={{ fontFamily: "'Antic', sans-serif" }}
               />
             </div>
-            <div className="flex flex-wrap justify-center gap-3 relative z-30">
-              {socialIcons.map(({ Icon, href, label, isX }) => (
-                <a
+            <motion.div
+              className="flex flex-wrap justify-center gap-3 relative z-30"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              {socialIcons.map(({ Icon, href, label, isX }, i) => (
+                <motion.a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="relative z-30 pointer-events-auto flex h-11 w-11 items-center justify-center rounded-xl border border-border/60 bg-black/60 text-neutral-300 transition-all duration-200 hover:-translate-y-1 hover:border-white/60 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-black cursor-pointer"
+                  className="relative z-30 pointer-events-auto flex h-11 w-11 items-center justify-center rounded-xl border border-border/60 bg-black/60 text-neutral-300 hover:border-white/60 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-offset-2 focus:ring-offset-black cursor-pointer"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 1.4 + i * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                  whileHover={{ y: -4, scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {isX ? (
                     <XLogo size={18} className="text-current" />
                   ) : (
                     Icon && <Icon size={18} />
                   )}
-                </a>
+                </motion.a>
               ))}
-            </div>
+            </motion.div>
+
+            {/* Scroll-down indicator */}
+            <motion.div
+              className="mt-2 flex flex-col items-center gap-1"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 2 }}
+            >
+              <span className="text-[11px] uppercase tracking-[0.3em] text-neutral-500">Scroll</span>
+              <motion.svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-neutral-500"
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <path d="M12 5v14M19 12l-7 7-7-7" />
+              </motion.svg>
+            </motion.div>
           </div>
         </div>
       </main>

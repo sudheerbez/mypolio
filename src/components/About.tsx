@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import { AnimatedDownload } from './ui/animated-download';
 import { Button } from './ui/button';
 import { ReadingTextReveal } from './ui/reading-text-reveal';
+import { ScrollReveal } from './ui/scroll-reveal';
 
 const aboutSegments = [
   'I am a results-driven Software Engineer with 5+ years of expertise in building scalable, high-performance systems. My passion lies in designing microservices architectures, cloud infrastructure, and full-stack solutions that solve real-world problems across fintech, healthcare, and community impact domains.',
@@ -44,10 +45,10 @@ export function About() {
       const rawBase = (import.meta.env?.BASE_URL ?? '/') as string;
       const withLeadingSlash = rawBase.startsWith('/') ? rawBase : `/${rawBase}`;
       const normalizedBase = withLeadingSlash.endsWith('/') ? withLeadingSlash : `${withLeadingSlash}/`;
-      const relativeUrl = `${normalizedBase}Resume.pdf`;
+      const relativeUrl = `${normalizedBase}SudheerB_Resume.pdf`;
 
       if (typeof window === 'undefined') {
-        return { absoluteUrl: null, relativeUrl, fallbackRelative: 'Resume.pdf' };
+        return { absoluteUrl: null, relativeUrl, fallbackRelative: 'SudheerB_Resume.pdf' };
       }
 
       const origin = window.location.origin;
@@ -65,8 +66,8 @@ export function About() {
           absoluteUrl,
           relativeUrl,
           fallbackRelative,
-          '/Resume.pdf',
-          'Resume.pdf',
+          '/SudheerB_Resume.pdf',
+          'SudheerB_Resume.pdf',
         ].filter(Boolean),
       ),
     ) as string[];
@@ -78,7 +79,7 @@ export function About() {
     }
 
     // Fallback: open in new tab (lets browser try to resolve)
-    const fallbackUrl = candidates[0] ?? 'Resume.pdf';
+    const fallbackUrl = candidates[0] ?? 'SudheerB_Resume.pdf';
     if (typeof window !== 'undefined') {
       try {
         const popup = window.open(fallbackUrl, '_blank', 'noopener');
@@ -94,7 +95,7 @@ export function About() {
   return (
     <section className="section py-24 bg-pure-black" id="about">
       <div className="container mx-auto px-4">
-        <div className="mb-12 max-w-4xl pl-6 sm:pl-8 md:pl-12 lg:pl-16">
+        <ScrollReveal className="mb-12 max-w-4xl pl-6 sm:pl-8 md:pl-12 lg:pl-16" direction="up" duration={0.7}>
           <span className="text-sm uppercase tracking-[0.4em] text-accent-gray">About</span>
           <h2 className="mt-4 text-4xl font-bold text-accent-white sm:text-5xl">
             How I build calm in complex systems
@@ -102,7 +103,7 @@ export function About() {
           <p className="mt-4 max-w-2xl text-accent-gray text-sm md:text-base">
             Systems engineer, strategist, and teammate focused on making backend platforms feel reliable, no matter how much chaos is happening behind the curtain.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="mx-auto max-w-4xl px-0 md:px-4 lg:px-6">
           <ReadingTextReveal
@@ -116,38 +117,40 @@ export function About() {
             bottomSpacerHeight="0"
           />
 
-          <div className="mt-8 w-full max-w-xl space-y-5 rounded-2xl border border-border/60 bg-background/40 p-5 sm:p-6">
-            <div className="space-y-3">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.35em] text-accent-gray">Resume</h3>
-              <p className="text-sm text-accent-gray">
-                Want the full backstory? Trigger the download animation and grab the latest resume to dive deeper.
-              </p>
+          <ScrollReveal direction="up" delay={0.2} duration={0.6}>
+            <div className="mt-8 w-full max-w-xl space-y-5 rounded-2xl border border-border/60 bg-background/40 p-5 sm:p-6">
+              <div className="space-y-3">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.35em] text-accent-gray">Resume</h3>
+                <p className="text-sm text-accent-gray">
+                  Want the full backstory? Trigger the download animation and grab the latest resume to dive deeper.
+                </p>
+              </div>
+              <Button
+                onClick={handleStartDownload}
+                disabled={isDownloading}
+                className="relative inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-border/60 bg-background/70 px-5 py-3 text-sm font-medium text-accent-white transition-all duration-300 hover:-translate-y-1 hover:bg-background hover:border-accent-white/40 focus:outline-none focus:ring-2 focus:ring-accent-white/50 focus:ring-offset-2 focus:ring-offset-pure-black"
+                variant="outline"
+              >
+                {isDownloading ? (
+                  <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                  </svg>
+                ) : (
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                )}
+                {isDownloading ? 'Preparing download…' : 'Download Resume'}
+              </Button>
+              <AnimatedDownload
+                className="w-full"
+                width="100%"
+                isAnimating={isDownloading}
+                onAnimationComplete={handleAnimationComplete}
+              />
             </div>
-            <Button
-              onClick={handleStartDownload}
-              disabled={isDownloading}
-              className="relative inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-border/60 bg-background/70 px-5 py-3 text-sm font-medium text-accent-white transition-all duration-300 hover:-translate-y-1 hover:bg-background hover:border-accent-white/40 focus:outline-none focus:ring-2 focus:ring-accent-white/50 focus:ring-offset-2 focus:ring-offset-pure-black"
-              variant="outline"
-            >
-              {isDownloading ? (
-                <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-                </svg>
-              ) : (
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              )}
-              {isDownloading ? 'Preparing download…' : 'Download Resume'}
-            </Button>
-            <AnimatedDownload
-              className="w-full"
-              width="100%"
-              isAnimating={isDownloading}
-              onAnimationComplete={handleAnimationComplete}
-            />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
