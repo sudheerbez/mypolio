@@ -1,8 +1,9 @@
+import { useMemo } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { Award, Code, Database, Zap } from "lucide-react";
 
 export function TimelineDemo() {
-  const data = [
+  const data = useMemo(() => [
     {
       title: "Robinhood",
       content: (
@@ -108,8 +109,7 @@ export function TimelineDemo() {
         </div>
       ),
     },
-  ];
-  
+  ], []);
   return (
     <div className="container mx-auto px-4">
       <div className="mx-auto mb-12 max-w-4xl px-0 md:px-4 lg:px-6">

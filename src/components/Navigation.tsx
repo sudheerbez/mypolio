@@ -1,5 +1,15 @@
 import { useState, useEffect } from 'react';
 
+const navItems = [
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#education', label: 'Education' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#publications', label: 'Publications' },
+  { href: '#contact', label: 'Contact' }
+];
+
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,16 +22,6 @@ export function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { href: '#about', label: 'About' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#education', label: 'Education' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#publications', label: 'Publications' },
-    { href: '#contact', label: 'Contact' }
-  ];
 
   return (
     <header className={`navbar fixed top-0 left-0 w-full z-50 transition-all duration-300 ${

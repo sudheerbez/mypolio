@@ -20,26 +20,35 @@ export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
 
   useEffect(() => {
+    let rafId: number | null = null
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight * 0.3
-      let currentSection = items[0].name
+      if (rafId !== null) return
+      rafId = requestAnimationFrame(() => {
+        const scrollPosition = window.scrollY + window.innerHeight * 0.3
+        let currentSection = items[0].name
 
-      items.forEach((item) => {
-        if (!item.url || !item.url.startsWith("#")) return
-        const section = document.querySelector<HTMLElement>(item.url)
-        if (!section) return
+        items.forEach((item) => {
+          if (!item.url || !item.url.startsWith("#")) return
+          const section = document.querySelector<HTMLElement>(item.url)
+          if (!section) return
 
-        if (scrollPosition >= section.offsetTop) {
-          currentSection = item.name
-        }
+          if (scrollPosition >= section.offsetTop) {
+            currentSection = item.name
+          }
+        })
+
+        setActiveTab((prev) => (prev === currentSection ? prev : currentSection))
+        rafId = null
       })
-
-      setActiveTab((prev) => (prev === currentSection ? prev : currentSection))
     }
 
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (rafId !== null) cancelAnimationFrame(rafId)
+    }
   }, [items])
 
   return (

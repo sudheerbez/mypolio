@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ElementType } from "react";
 import { Badge } from "@/components/ui/badge";
 
@@ -36,30 +36,33 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
     return () => clearInterval(timer);
   }, [autoRotate]);
 
-  const handleActivate = (id: number) => {
+  const handleActivate = useCallback((id: number) => {
     setActiveId(id);
     setAutoRotate(false);
-  };
+  }, []);
 
-  const handleDeactivate = () => {
+  const handleDeactivate = useCallback(() => {
     setAutoRotate(true);
-  };
+  }, []);
 
   const activeItem = useMemo(
     () => timelineData.find((item) => item.id === activeId) ?? timelineData[0],
     [activeId, timelineData],
   );
 
-  const calculateNodePosition = (index: number, total: number) => {
-    const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = 200;
-    const radian = (angle * Math.PI) / 180;
-    const x = radius * Math.cos(radian);
-    const y = radius * Math.sin(radian);
-    const zIndex = Math.round(100 + 50 * Math.cos(radian));
-    const opacity = Math.max(0.4, Math.min(1, 0.4 + 0.6 * ((1 + Math.sin(radian)) / 2)));
-    return { x, y, angle, zIndex, opacity };
-  };
+  const nodePositions = useMemo(() => {
+    const total = timelineData.length;
+    return timelineData.map((_, index) => {
+      const angle = ((index / total) * 360 + rotationAngle) % 360;
+      const radius = 200;
+      const radian = (angle * Math.PI) / 180;
+      const x = radius * Math.cos(radian);
+      const y = radius * Math.sin(radian);
+      const zIndex = Math.round(100 + 50 * Math.cos(radian));
+      const opacity = Math.max(0.4, Math.min(1, 0.4 + 0.6 * ((1 + Math.sin(radian)) / 2)));
+      return { x, y, angle, zIndex, opacity };
+    });
+  }, [rotationAngle, timelineData]);
 
   return (
     <div
@@ -71,7 +74,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
         <div className="pointer-events-none absolute h-96 w-96 rounded-full border border-white/10" />
 
         {timelineData.map((item, index) => {
-          const position = calculateNodePosition(index, timelineData.length);
+          const position = nodePositions[index];
           const isActive = activeItem?.id === item.id;
           const Icon = item.icon;
 

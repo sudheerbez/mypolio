@@ -1,43 +1,53 @@
+import { memo } from 'react';
 import type { ReactNode } from 'react';
 import { ArrowUpRight, Brain, Database, Server, TrendingUp } from 'lucide-react';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 
-export function Projects() {
-  const projects: ProjectCard[] = [
-    {
-      title: "Robinhood Strategies Platform",
-      description: "Architected and developed Java/Spring Boot microservices for order execution, strategy evaluation, and portfolio rebalancing. Integrated data-driven investment models with 22% improved accuracy and built responsive React dashboards with TypeScript.",
-      icon: <TrendingUp className="w-4 h-4 text-emerald-500" />,
-      tags: ["Java", "Spring Boot", "React", "Trading"],
-      highlight: "99.99% uptime, 35% faster API performance",
-      link: "#"
-    },
-    {
-      title: "HIPAA-Compliant Healthcare Platform",
-      description: "Built secure microservices for claims processing and healthcare eligibility systems using Spring Boot. Integrated Kafka event streams and Dell Boomi connectors to sync data between payers and internal systems with HIPAA compliance.",
-      icon: <Database className="w-4 h-4 text-cyan-500" />,
-      tags: ["Java", "Healthcare", "Kafka", "HIPAA"],
-      highlight: "30% reduction in manual escalations",
-      link: "#"
-    },
-    {
-      title: "Donation & Community Service Platform",
-      description: "Led full-stack development of cross-platform donation platform with Android/Kotlin apps, React web frontend, and Java/Go backend services. Integrated Google Maps API for location-based services and push notifications.",
-      icon: <Server className="w-4 h-4 text-blue-500" />,
-      tags: ["Java", "React", "Android", "Google Maps"],
-      highlight: "20,000+ downloads, 150% user retention increase",
-      link: "#"
-    },
-    {
-      title: "Shopify E-Commerce Prototype",
-      description: "Built e-commerce application using JavaScript, TypeScript, Angular, and Spring Boot. Implemented Apache Kafka for asynchronous microservice communication and used Spring Boot actuator for comprehensive monitoring.",
-      icon: <Brain className="w-4 h-4 text-purple-500" />,
-      tags: ["Angular", "Spring Boot", "Kafka", "MySQL"],
-      highlight: "20% increase in reliability, 22% better scalability",
-      link: "#"
-    }
-  ];
+interface ProjectCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+  highlight: string;
+}
 
+const projects: ProjectCardProps[] = [
+  {
+    title: "Robinhood Strategies Platform",
+    description: "Architected and developed Java/Spring Boot microservices for order execution, strategy evaluation, and portfolio rebalancing. Integrated data-driven investment models with 22% improved accuracy and built responsive React dashboards with TypeScript.",
+    icon: <TrendingUp className="w-4 h-4 text-emerald-500" />,
+    tags: ["Java", "Spring Boot", "React", "Trading"],
+    highlight: "99.99% uptime, 35% faster API performance",
+    link: "#"
+  },
+  {
+    title: "HIPAA-Compliant Healthcare Platform",
+    description: "Built secure microservices for claims processing and healthcare eligibility systems using Spring Boot. Integrated Kafka event streams and Dell Boomi connectors to sync data between payers and internal systems with HIPAA compliance.",
+    icon: <Database className="w-4 h-4 text-cyan-500" />,
+    tags: ["Java", "Healthcare", "Kafka", "HIPAA"],
+    highlight: "30% reduction in manual escalations",
+    link: "#"
+  },
+  {
+    title: "Donation & Community Service Platform",
+    description: "Led full-stack development of cross-platform donation platform with Android/Kotlin apps, React web frontend, and Java/Go backend services. Integrated Google Maps API for location-based services and push notifications.",
+    icon: <Server className="w-4 h-4 text-blue-500" />,
+    tags: ["Java", "React", "Android", "Google Maps"],
+    highlight: "20,000+ downloads, 150% user retention increase",
+    link: "#"
+  },
+  {
+    title: "Shopify E-Commerce Prototype",
+    description: "Built e-commerce application using JavaScript, TypeScript, Angular, and Spring Boot. Implemented Apache Kafka for asynchronous microservice communication and used Spring Boot actuator for comprehensive monitoring.",
+    icon: <Brain className="w-4 h-4 text-purple-500" />,
+    tags: ["Angular", "Spring Boot", "Kafka", "MySQL"],
+    highlight: "20% increase in reliability, 22% better scalability",
+    link: "#"
+  }
+];
+
+export function Projects() {
   return (
     <section className="section py-24 bg-pure-black" id="projects">
       <div className="container mx-auto px-4">
@@ -61,23 +71,14 @@ export function Projects() {
   );
 }
 
-interface ProjectCard {
-  icon: ReactNode;
-  title: string;
-  description: string;
-  tags: string[];
-  link: string;
-  highlight: string;
-}
-
-function ProjectCard({
+const ProjectCard = memo(function ProjectCard({
   icon,
   title,
   description,
   tags,
   link,
   highlight,
-}: ProjectCard) {
+}: ProjectCardProps) {
   return (
     <li className="list-none">
       <div className="group relative flex h-full flex-col rounded-[1.25rem] border border-border/60 bg-background/60 p-3 backdrop-blur md:rounded-2xl md:p-4">
@@ -129,4 +130,4 @@ function ProjectCard({
       </div>
     </li>
   );
-}
+});
