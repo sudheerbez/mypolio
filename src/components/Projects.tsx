@@ -2,6 +2,7 @@ import { memo } from 'react';
 import type { ReactNode } from 'react';
 import { ArrowUpRight, Brain, Database, Server, TrendingUp } from 'lucide-react';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/scroll-reveal';
 
 interface ProjectCardProps {
   icon: ReactNode;
@@ -51,7 +52,7 @@ export function Projects() {
   return (
     <section className="section py-24 bg-pure-black" id="projects">
       <div className="container mx-auto px-4">
-        <div className="mb-12 max-w-4xl">
+        <ScrollReveal className="mb-12 max-w-4xl" direction="up" duration={0.7}>
           <span className="text-sm uppercase tracking-[0.4em] text-accent-gray">Recent Builds</span>
           <h2 className="mt-4 text-4xl font-bold text-accent-white sm:text-5xl">
             Systems I&apos;m excited to have shipped
@@ -59,13 +60,15 @@ export function Projects() {
           <p className="mt-4 text-accent-gray text-sm md:text-base max-w-2xl">
             Distributed rails, real-time engines, and AI copilots that keep teams calm when the load spikes.
           </p>
-        </div>
+        </ScrollReveal>
         
-        <ul className="projects-content grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <StaggerContainer className="projects-content grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3" staggerDelay={0.12}>
           {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+            <StaggerItem key={project.title} as="div" direction="up" distance={40} duration={0.55}>
+              <ProjectCard {...project} />
+            </StaggerItem>
           ))}
-        </ul>
+        </StaggerContainer>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { Award, Code, Database, Zap } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export function TimelineDemo() {
   const data = useMemo(() => [
@@ -112,14 +113,14 @@ export function TimelineDemo() {
   ], []);
   return (
     <div className="container mx-auto px-4">
-      <div className="mx-auto mb-12 max-w-4xl px-0 md:px-4 lg:px-6">
+      <ScrollReveal className="mx-auto mb-12 max-w-4xl px-0 md:px-4 lg:px-6" direction="up" duration={0.7}>
         <h2 className="text-left text-lg md:text-4xl font-bold text-accent-white mb-4">
           Experience
         </h2>
         <p className="text-left text-accent-gray text-sm md:text-base max-w-2xl">
           Roles that shaped my systems thinking—from fintech payments to AI research and large-scale distributed platforms.
         </p>
-      </div>
+      </ScrollReveal>
       <div className="mx-auto max-w-6xl px-0 md:px-4 lg:px-6">
         <Timeline data={data} />
       </div>

@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react';
+import { motion } from 'framer-motion';
 import { NavBarDemo } from './components/NavBarDemo';
 import { Hero } from './components/Hero';
 
@@ -10,7 +11,12 @@ const Contact = lazy(() => import('./components/Contact').then(m => ({ default: 
 
 function App() {
   return (
-    <div className="min-h-screen bg-pure-black text-accent-white">
+    <motion.div
+      className="min-h-screen bg-pure-black text-accent-white"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
       <NavBarDemo />
       <Hero />
       <Suspense fallback={<div className="min-h-screen" />}>
@@ -20,7 +26,7 @@ function App() {
         <Skills />
         <Contact />
       </Suspense>
-    </div>
+    </motion.div>
   );
 }
 
