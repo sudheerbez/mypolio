@@ -8,7 +8,7 @@ export const profile = {
   phone: '316-351-8027',
   linkedin: 'https://www.linkedin.com/in/sudheerbez',
   github: 'https://github.com/sudheerbez',
-  resume: `${import.meta.env.BASE_URL}Resume.pdf`,
+  resume: `${import.meta.env.BASE_URL}SudheerB_Resume.pdf`,
 };
 
 export const heroStats = [
